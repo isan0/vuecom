@@ -23,7 +23,7 @@
     methods: {
       guardarMensaje(){
         // Aqui se guardara en la BBDD
-        let resultado = await (await fetch(`/api/add?contenido=${this.subcomentario}`));
+        let resultado = await (await fetch(`/api/add?contenido=${this.subcomentario}`)).json();
         this.comentarios.push({id: resultado.insertId, contenido: this.subcomentario});
         this.subcomentario="";
       },
